@@ -1,37 +1,12 @@
-.navbar{
-    text-align: center;
-}
+
 .navbar-dashboard{
     display: flex;
-    justify-content: space-around;
-    background-color: black;
     padding: 35px;
-    text-align: center;
-    
+    background-color: black;
+    justify-content: space-between;
+    color: white;
 }
 .navbar-dashboard .button {
     color: white;
-    text-decoration: none;
-    padding-bottom: 10px;
-    
-}
-.first-nav-bar .button{
-    margin: -200px;
-    font-size: 30px;
-    
-}
-.second-nav-bar .button {
-    font-size: 20px;
-    text-align: center;
-    justify-content: center;
-    padding: 20px;
-  
-
-}
-.third-nav-bar .button {
-    font-size: 20px;
-    text-align: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 20px;
+    padding: 25px;
 }

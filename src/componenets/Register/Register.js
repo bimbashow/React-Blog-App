@@ -1,9 +1,9 @@
+import "./Register.css";
 const Register = () => {
 
     return(
         <section id="register-page" className="register">
         <form id="register-form" action="" method="">
-            <fieldset>
                 <legend>Register Form</legend>
                 <p className="field">
                     <label htmlFor="email">Email</label>
@@ -24,7 +24,6 @@ const Register = () => {
                     </span>
                 </p>
                 <input className="button submit" type="submit" value="Register" />
-            </fieldset>
         </form>
     </section>
     );

@@ -1,10 +1,8 @@
+import "./Create.css";
 const Create = () => {
-    
-
     return(
         <section id="create-page" className="create">
         <form id="create-form"  method="POST">
-            <fieldset>
                 <legend>Add Blog</legend>
                 <p className="field">
                     <label htmlFor="name">Name</label>
@@ -32,7 +30,6 @@ const Create = () => {
                 
                 </p>
                 <input className="button submit" type="submit" value="Add Pet" />
-            </fieldset>
         </form>
     </section>
     )

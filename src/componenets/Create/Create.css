@@ -1,0 +1,20 @@
+.create{
+    color: white;
+    background-color: #000000b8;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 430px;
+     height: 520px;
+     position: absolute;
+     transform: translate(-50%,-35%);
+     left: 50%;
+     top: 50%;
+     border-radius: 20px;
+ }
+
+ #create-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
