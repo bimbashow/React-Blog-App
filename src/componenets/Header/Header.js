@@ -7,7 +7,7 @@ const Header = () => {
     <header id="site-header">
         <nav className="navbar">
             <section className="navbar-dashboard">
-                <Link to="/dashboard" className="">Dashboard</Link>
+                <Link to="/dashboard" className="dashboard-btnn">Dashboard</Link>
                 <div id="guest">
                 <Link className="button" to="/login">Login</Link>
                 <Link to="/register" className="button">Register</Link>

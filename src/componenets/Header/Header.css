@@ -1,12 +1,22 @@
-
 .navbar-dashboard{
     display: flex;
-    padding: 35px;
+    padding: 30px;
     background-color: black;
     justify-content: space-between;
     color: white;
+    align-items: center;
 }
 .navbar-dashboard .button {
     color: white;
     padding: 25px;
+    text-decoration: none;
+    font-size: 22px;
+
+}
+
+.dashboard-btnn{
+    color: white;
+
+    text-decoration: none;
+    font-size: 28px;
 }
