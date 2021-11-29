@@ -1,5 +1,11 @@
+import { useState } from "react";
 import "./Login.css";
 const Login = () => {
+    const[loginEmail,setLoginEmail] = useState("");
+    const[loginPassword,setLoginPassword] = useState("");
+    const loginHandler = async () =>{
+         
+    }
 
 
     return(
@@ -9,13 +15,13 @@ const Login = () => {
                 <p className="field">
                     <label htmlFor="email">Email</label>
                     <span className="input">
-                        <input type="text" name="email" id="email" placeholder="Email" />
+                        <input type="text" name="email" id="email" placeholder="Email" onChange={(event) => setLoginEmail(event.target.value)} />
                     </span>
                 </p>
                 <p className="field">
                     <label htmlFor="password">Password</label>
                     <span className="input">
-                        <input type="password" name="password" id="password" placeholder="Password" />
+                        <input type="password" name="password" id="password" placeholder="Password" onChange={(event) => setLoginPassword(event.target.value)}/>
                     </span>
                 </p>
                 <input className="button submit" type="submit" value="Login" />

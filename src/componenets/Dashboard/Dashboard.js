@@ -4,7 +4,7 @@ const Dashboard = () =>{
     return (
   <section className="dashboard">
                 <h1>Dashboard</h1>
-               <div className="dashboard-animal-list">
+               <div className="dashboard-blog-list">
                 <ul className="other-pets-list">
                     <li className="otherPet">
                         <h3>Name: Gosho</h3>
