@@ -1,10 +1,20 @@
+import { signInWithEmailAndPassword } from "@firebase/auth";
 import { useState } from "react";
 import "./Login.css";
+import { auth } from  "../../config/firebaseConfig.js"
+
 const Login = () => {
     const[loginEmail,setLoginEmail] = useState("");
     const[loginPassword,setLoginPassword] = useState("");
-    const loginHandler = async () =>{
-         
+
+    const loginHandler = async (e) =>{
+        e.preventDefault();
+        try{
+        const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+        console.log(user);
+        }catch (error){
+        console.log(error.message);
+        }
     }
 
 
@@ -24,7 +34,7 @@ const Login = () => {
                         <input type="password" name="password" id="password" placeholder="Password" onChange={(event) => setLoginPassword(event.target.value)}/>
                     </span>
                 </p>
-                <input className="button submit" type="submit" value="Login" />
+                <input className="button submit" type="submit" value="Login" onClick={loginHandler} />
         </form>
     </section>
     );

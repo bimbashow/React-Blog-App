@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword,onAuthStateChanged} from "@firebase/auth";
+import { createUserWithEmailAndPassword } from "@firebase/auth";
 import "./Register.css";
 import { auth } from  "../../config/firebaseConfig.js"
 const Register = () => {
@@ -7,14 +7,15 @@ const Register = () => {
     const[registerEmail,setRegisterEmail] = useState("");
     const[registerPassword,setRegisterPassword] = useState("");
     const[user, setUser] = useState({})
+
+  
      
     const registerHandler = async (e) =>{
-         e.preventDefault();
+        e.preventDefault();
         try{
 
         const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
 
-        console.log(user);
         }catch (error){
         console.log(error.message);
         }
@@ -42,7 +43,7 @@ const Register = () => {
                         <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password" />
                     </span>
                 </p> */}
-                <input className="button submit" type="submit" value="Register" onClick={registerHandler    } />
+                <input className="button submit" type="submit" value="Register" onClick={registerHandler} />
         </form>
     </section>
     );
