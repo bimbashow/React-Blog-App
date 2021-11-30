@@ -27,7 +27,7 @@ setUser(currentUser);
 
  const userNav = 
  <div id="user">            
- <span>Welcome, user</span>
+ <span>Welcome, {user?.email}</span>
  <Link className="button" to="/my-posts">My Posts</Link>
  <Link className="button" to="/create">Create</Link>
  <Link className="button" to="/logout" onClick={logoutHandler} >Logout</Link>
