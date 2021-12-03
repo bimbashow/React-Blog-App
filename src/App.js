@@ -1,9 +1,9 @@
 import {Routes,Route} from 'react-router-dom';  
-import Header from './componenets/Header/Header.js';
-import Dashboard from './componenets/Dashboard/Dashboard.js';
-import Register from './componenets/Register/Register.js';
-import Login from './componenets/Login/Login.js';
-import Create from './componenets/Create/Create.js';
+import Header from './components/Header/Header.js';
+import Dashboard from './components/Dashboard/Dashboard.js';
+import Register from './components/Register/Register.js';
+import Login from './components/Login/Login.js';
+import Create from './components/Create/Create.js';
 import './App.css';
 
 

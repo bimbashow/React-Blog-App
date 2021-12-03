@@ -28,13 +28,13 @@ const Register = () => {
                 <p className="field">
                     <label htmlFor="email">Email</label>
                     <span className="input">
-                        <input type="text" name="email" id="email" placeholder="Email" onChange={(event) => setRegisterEmail(event.target.value)}/>
+                        <input type="text" name="email" id="email" placeholder="example@gmail.com" onChange={(event) => setRegisterEmail(event.target.value)}/>
                     </span>
                 </p>
-                <p className="field">
+                <p className="field" >
                     <label htmlFor="password">Password</label>
                     <span className="input">
-                        <input type="password" name="password" id="password" placeholder="Password"  onChange={(event) => setRegisterPassword(event.target.value)} />
+                        <input type="password" name="password" id="password" placeholder="123456"  onChange={(event) => setRegisterPassword(event.target.value)} />
                     </span>
                 </p>
                 {/* <p className="field">

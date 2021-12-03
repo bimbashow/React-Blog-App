@@ -1,0 +1,54 @@
+.login{
+    color: white;
+    background-color: #000000b8;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 430px;
+     height: 520px;
+     position: absolute;
+     transform: translate(-50%,-35%);
+     left: 50%;
+     top: 50%;
+     border-radius: 20px;
+ }
+
+ #login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+legend{
+    font-size: 40px;
+    padding: 5px;
+}
+label{
+    background-color: transparent;
+    font-size: 20px;
+}
+.field .input{
+    background-color: transparent;
+    padding: 35px 10px;
+    border-radius: 30px;
+
+
+}
+#email,#password{
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 15px 40px; 
+    color: white;
+
+}
+.button.submit{
+    background-color: dimgray;
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+#password{
+    margin-right: 29px;
+}

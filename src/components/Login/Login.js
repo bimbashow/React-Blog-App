@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "@firebase/auth";
 import { useState } from "react";
 import "./Login.css";
 import { auth } from  "../../config/firebaseConfig.js"
+import { useNavigate } from "react-router";
 
 const Login = () => {
     const[loginEmail,setLoginEmail] = useState("");
@@ -15,6 +16,7 @@ const Login = () => {
         }catch (error){
         console.log(error.message);
         }
+        
     }
 
 
@@ -25,13 +27,13 @@ const Login = () => {
                 <p className="field">
                     <label htmlFor="email">Email</label>
                     <span className="input">
-                        <input type="text" name="email" id="email" placeholder="Email" onChange={(event) => setLoginEmail(event.target.value)} />
+                        <input type="text" name="email" id="email" placeholder="example@gmail.com" onChange={(event) => setLoginEmail(event.target.value)} />
                     </span>
                 </p>
                 <p className="field">
                     <label htmlFor="password">Password</label>
                     <span className="input">
-                        <input type="password" name="password" id="password" placeholder="Password" onChange={(event) => setLoginPassword(event.target.value)}/>
+                        <input type="password" name="password" id="password" placeholder="123456" onChange={(event) => setLoginPassword(event.target.value)}/>
                     </span>
                 </p>
                 <input className="button submit" type="submit" value="Login" onClick={loginHandler} />
