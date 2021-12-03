@@ -2,6 +2,8 @@ import { onAuthStateChanged, signOut } from "@firebase/auth";
 import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import { auth } from "../../config/firebaseConfig.js";
+import { useNavigate } from "react-router";
+
 
 import './Header.css';
 
@@ -9,10 +11,13 @@ const Header = () => {
 
 const [user,setUser] = useState({});
 
+const navigate = useNavigate()
+
 const logoutHandler = async (e) => {
   e.preventDefault();
   user.email = null;
   await signOut(auth);
+  navigate('/login'); 
 }
 
 onAuthStateChanged(auth, (currentUser) =>{

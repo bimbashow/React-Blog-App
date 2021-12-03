@@ -2,20 +2,22 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
 import "./Register.css";
 import { auth } from  "../../config/firebaseConfig.js"
+import { useNavigate } from "react-router";
+
 const Register = () => {
 
     const[registerEmail,setRegisterEmail] = useState("");
     const[registerPassword,setRegisterPassword] = useState("");
-    const[user, setUser] = useState({})
+    
+    const navigate = useNavigate();
 
-  
-     
-    const registerHandler = async (e) =>{
+
+     const registerHandler = async (e) =>{
         e.preventDefault();
         try{
 
         const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-
+        navigate('/')
         }catch (error){
         console.log(error.message);
         }
@@ -37,12 +39,7 @@ const Register = () => {
                         <input type="password" name="password" id="password" placeholder="123456"  onChange={(event) => setRegisterPassword(event.target.value)} />
                     </span>
                 </p>
-                {/* <p className="field">
-                    <label htmlFor="repeat-pass">Repeat Password</label>
-                    <span className="input">
-                        <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password" />
-                    </span>
-                </p> */}
+               
                 <input className="button submit" type="submit" value="Register" onClick={registerHandler} />
         </form>
     </section>

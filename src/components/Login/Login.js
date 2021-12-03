@@ -1,24 +1,25 @@
 import { signInWithEmailAndPassword } from "@firebase/auth";
 import { useState } from "react";
 import "./Login.css";
-import { auth } from  "../../config/firebaseConfig.js"
+import { auth } from  "../../config/firebaseConfig.js";
 import { useNavigate } from "react-router";
 
 const Login = () => {
     const[loginEmail,setLoginEmail] = useState("");
     const[loginPassword,setLoginPassword] = useState("");
+    
+    const navigate = useNavigate();
 
     const loginHandler = async (e) =>{
         e.preventDefault();
         try{
         const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-        console.log(user);
+         navigate('/');  
         }catch (error){
         console.log(error.message);
         }
         
     }
-
 
     return(
         <section id="login-page" className="login">
@@ -36,7 +37,7 @@ const Login = () => {
                         <input type="password" name="password" id="password" placeholder="123456" onChange={(event) => setLoginPassword(event.target.value)}/>
                     </span>
                 </p>
-                <input className="button submit" type="submit" value="Login" onClick={loginHandler} />
+                <input className="button submit" type="submit" value="Login"  onClick={loginHandler} />
         </form>
     </section>
     );
