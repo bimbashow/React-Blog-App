@@ -27,7 +27,17 @@ const Create = () => {
                     <span className="input">
                     <textarea name="type" id="type" placeholder="What you see on the picture"></textarea>
                     </span>
-                
+                </p>
+                <p className="field">
+                    <label htmlFor="breed">Breed</label>
+                    <span className="input">
+                    <textarea name="breed" id="breed" placeholder="What kind of breed it is?"></textarea>
+                    </span>
+                </p>  <p className="field">
+                    <label htmlFor="Age">Age</label>
+                    <span className="input">
+                    <textarea name="Age" id="Age" placeholder="How old is your cat"></textarea>
+                    </span>
                 </p>
                 <input className="button submit" type="submit" value="Add Pet" />
         </form>

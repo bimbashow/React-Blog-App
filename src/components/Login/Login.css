@@ -29,7 +29,6 @@ label{
 }
 .field .input{
     background-color: transparent;
-    padding: 35px 10px;
     border-radius: 30px;
 
 
@@ -37,7 +36,6 @@ label{
 #email,#password{
     background-color: transparent;
     border-radius: 30px;
-    padding: 15px 40px; 
     color: white;
 
 }
