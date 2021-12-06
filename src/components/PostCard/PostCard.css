@@ -11,13 +11,17 @@ img{
 }
 .otherPosts{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
 
 }
 .postcard-info{
     background-color: #302e2e;
     width: 320px;
     height: 460px;
-    margin: 30px 10px;
+    margin: 30px 40px;
     color: white;
     border-radius: 15px;
     position: relative;
