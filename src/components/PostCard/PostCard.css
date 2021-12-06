@@ -1,0 +1,42 @@
+
+img{
+    height: 240px;
+    width: 319px;
+    justify-content: center;
+    border-radius: 15px 15px 0 0;
+    background-size: cover;
+    object-fit: cover;
+    margin-top: -16px;
+
+}
+.otherPosts{
+    display: flex;
+
+}
+.postcard-info{
+    background-color: #302e2e;
+    width: 320px;
+    height: 460px;
+    margin: 30px 10px;
+    color: white;
+    border-radius: 15px;
+    position: relative;
+  transition: 0.4s ease-out;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.postcard-info:hover{
+    transform: translateY(20px);
+}
+.card-name{
+    margin-top: -15px;
+    margin-left: 10px;
+}.card-category{
+    text-align: center;
+}.card-breed{
+    text-align: center;
+}.card-age{
+    text-align: center;
+}.card-description{
+    text-align: center;
+}
+

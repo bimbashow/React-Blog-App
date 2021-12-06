@@ -15,11 +15,10 @@ function App() {
      <Header/>
      <main id="site-content">
   <Routes>
-   <Route path="/" element={<Dashboard />}/>
+   <Route path="/dashboard" element={<Dashboard />}/>
    <Route path="/Login" element={<Login />}/>
    <Route path="/Register" element={<Register />}/>
    <Route path="/Create" element={<Create />}/>
-   <Route path="/" element={<Create />}/>
   </Routes>
      </main>
     </div>

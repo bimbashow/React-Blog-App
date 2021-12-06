@@ -1,14 +1,19 @@
-const Dashboard = () =>{
+import PostCard from '../PostCard/PostCard.js';
+import {Routes,Route} from 'react-router-dom'; 
+import "./Dashboard.css"; 
 
+const Dashboard = () =>{
+   
 
     return (
   <section className="dashboard">
-               <div className="dashboard-blog-list">
-                <ul className="other-pets-list">
-                  
-                   
+                <ul className="other-posts-list">
+      
+              <Routes>
+                  <Route path="/" element={<PostCard />}/>
+              </Routes>
+  
                 </ul>
-                </div>
             </section>
     );
 }

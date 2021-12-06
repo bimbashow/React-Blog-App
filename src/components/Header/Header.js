@@ -34,6 +34,7 @@ setUser(currentUser);
  <div id="user">            
  <span>Welcome, {user?.email}</span>
  <Link className="button" to="/my-posts">My Posts</Link>
+ <Link className="button" to="/favourites">Favourites</Link>
  <Link className="button" to="/create">Create</Link>
  <Link className="button" to="/logout" onClick={logoutHandler} >Logout</Link>
 </div>;
@@ -42,7 +43,7 @@ setUser(currentUser);
     <header id="site-header">
         <nav className="navbar">
             <section className="navbar-dashboard">
-                <Link to="/" className="dashboard-btnn">Dashboard</Link>
+                <Link to="/dashboard" className="dashboard-btnn">Dashboard</Link>
                 
              {user !== null ? userNav : guestNav}
                

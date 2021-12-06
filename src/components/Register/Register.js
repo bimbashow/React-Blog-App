@@ -17,7 +17,7 @@ const Register = () => {
         try{
 
         const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-        navigate('/')
+        navigate('/dashboard')
         }catch (error){
         console.log(error.message);
         }
