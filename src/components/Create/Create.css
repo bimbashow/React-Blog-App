@@ -4,10 +4,10 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    width: 430px;
-     height: 520px;
+    width: 500px;
+     height: 700px;
      position: absolute;
-     transform: translate(-50%,-35%);
+     transform: translate(-50%,-45%);
      left: 50%;
      top: 50%;
      border-radius: 20px;
@@ -15,6 +15,23 @@
 
  #create-form{
     display: flex;
+    margin:auto;
     flex-direction: column;
     justify-content: center;
+    width: 300px;
+}
+
+.input #category,#name,#description,#image,#breed,#age{
+    padding: 15px 40px;
+    border-radius: 30px;
+}
+.button.submit{
+    background-color: dimgray;
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+#label{
+    vertical-align: middle;
 }

@@ -6,7 +6,7 @@ const PostCard= () => {
  
     
     const [cards,setCards] = useState([]);
-    const cardsCollectionRef =collection(db,"cats")
+    const cardsCollectionRef = collection(db,"cats")
 
 
     useEffect(() =>{
@@ -31,11 +31,11 @@ const PostCard= () => {
         <h3 className="card-name">Name: {card.name}</h3> 
         <p className="card-category">Category: {card.category}</p>
         <p className="card-breed">Breed: {card.breed}</p>
-        <p className="card-age">Age: {card.age}</p>
         <p className="card-description">{card.description}</p>
         <div className="post-info"> 
             <a href="#"><button className="button"><i className="fas fa-heart"></i>Favourite</button></a>
             <a href="#"><button className="button">Details</button></a>
+            <a href="#"><button className="button">Delete</button></a>
             <i className="fas fa-heart"></i> <span> 2</span>
         </div>
         </div>

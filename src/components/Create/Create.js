@@ -10,7 +10,6 @@ const Create = () => {
     const [newImage,setImage] = useState("");
     const [newCategory,setCategory] = useState("");
     const [newBreed,setBreed] = useState("");
-    const [newAge,setAge] = useState("");
 
     const navigate  = useNavigate();
    const cardsCollectionRef = collection(db,"cats")
@@ -19,7 +18,7 @@ const Create = () => {
 
     const createPost = async (e) =>{
      e.preventDefault();
-      await addDoc(cardsCollectionRef,{name: newName, description:newDescription,imageurl:newImage,category:newCategory,breed:newBreed,age:newAge})
+      await addDoc(cardsCollectionRef,{name: newName, description:newDescription,imageurl:newImage,category:newCategory,breed:newBreed})
       navigate('/dashboard');
     }
 
@@ -31,36 +30,31 @@ const Create = () => {
                 <p className="field">
                     <label htmlFor="name">Name</label>
                     <span className="input">
-                        <input type="text" name="name" id="name" placeholder="Name" onChange={(event)=> {setName(event.target.value)}} />
-                    </span>
-                </p>
-                <p className="field">
-                    <label htmlFor="description">Description</label>
-                    <span className="input">
-                        <textarea name="description" id="description" placeholder="Description" onChange={(event)=> {setDescription(event.target.value)}}></textarea>
-                    </span>
-                </p>
-                <p className="field">
-                    <label htmlFor="image">Image</label>
-                    <span className="input">
-                        <input type="text" name="imageUrl" id="image" placeholder="Put image adress here"onChange={(event)=> {setImage(event.target.value)}}/>
-                    </span>
-                </p>
-                <p className="field">
-                    <label htmlFor="category">Category</label>
-                    <span className="input">
-                    <textarea name="category" id="category" placeholder="What category is your image?"onChange={(event)=> {setCategory(event.target.value)}}></textarea>
+                        <input type="text" name="name" id="name" placeholder="Navcho,Myrcho..." onChange={(event) => { setName(event.target.value) }} />
                     </span>
                 </p>
                 <p className="field">
                     <label htmlFor="breed">Breed</label>
                     <span className="input">
-                    <textarea name="breed" id="breed" placeholder="What kind of breed it is?" onChange={(event)=> {setBreed(event.target.value)}}></textarea>
+                        <input type="text" name="breed" id="breed" placeholder="siamese cat,persian..." onChange={(event) => { setBreed(event.target.value) }} />
                     </span>
-                </p>  <p className="field">
-                    <label htmlFor="Age">Age</label>
+                </p> 
+                <p className="field">
+                    <label htmlFor="category" className="create-category-label">Category</label>
                     <span className="input">
-                    <textarea name="Age" id="Age" placeholder="How old is your cat" onChange={(event)=> {setAge(event.target.value)}}></textarea>
+                        <input type="text" name="category" id="category" placeholder="cute,funny..." onChange={(event) => { setCategory(event.target.value) }} />
+                    </span>
+                </p> 
+                <p className="field">
+                    <label htmlFor="image">Image    </label>
+                    <span className="input">
+                        <input type="text" name="image" id="image" placeholder="adress link" onChange={(event) => { setImage(event.target.value) }} />
+                    </span>
+                </p>
+                <p className="field">
+                    <label htmlFor="description" className="    ">Description</label>
+                    <span className="input">
+                        <input type="text" name="description" id="description" placeholder="say few words for your photo" onChange={(event) => {setDescription(event.target.value) }} />
                     </span>
                 </p>
                 <input className="button submit" onClick={createPost} type="submit" value="Add Post" />
