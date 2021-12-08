@@ -24,6 +24,8 @@ onAuthStateChanged(auth, (currentUser) =>{
 setUser(currentUser);
 });
 
+
+
  const guestNav =  
  <div id="guest">
  <Link className="button" to="/login">Login</Link>
@@ -37,14 +39,17 @@ setUser(currentUser);
  <Link className="button" to="/favourites">Favourites</Link>
  <Link className="button" to="/create">Create</Link>
  <Link className="button" to="/logout" onClick={logoutHandler} >Logout</Link>
+ 
 </div>;
 
   return (
     <header id="site-header">
+      
         <nav className="navbar">
             <section className="navbar-dashboard">
-                <Link to="/dashboard" className="dashboard-btnn">Dashboard</Link>
-                
+                <Link to="/" className="dashboard-btnn">Dashboard</Link>
+
+                 
              {user !== null ? userNav : guestNav}
                
             </section>

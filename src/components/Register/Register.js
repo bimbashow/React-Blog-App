@@ -1,48 +1,60 @@
-import { useState } from "react";
-import { createUserWithEmailAndPassword } from "@firebase/auth";
+import React, { useState } from "react";
 import "./Register.css";
-import { auth } from  "../../config/firebaseConfig.js"
+
+
+import { useForm } from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {schema} from "../../Validations/registerUserValidation.js"
+import { createUserWithEmailAndPassword, getAuth, } from "@firebase/auth";
 import { useNavigate } from "react-router";
+
 
 const Register = () => {
 
-    const[registerEmail,setRegisterEmail] = useState("");
-    const[registerPassword,setRegisterPassword] = useState("");
-    
     const navigate = useNavigate();
 
+    const {register, handleSubmit, formState: { errors }} = useForm({
+        resolver: yupResolver(schema),
+    });
+    const submitForm = (data) => {
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, data.email, data.password )
+          .then((userCredential) => {
+            const user = userCredential.user;
+            navigate('/')
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
 
-     const registerHandler = async (e) =>{
-        e.preventDefault();
-        try{
-
-        const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-        navigate('/dashboard')
-        }catch (error){
-        console.log(error.message);
-        }
     };
-
-    return(
+    
+       return(
         <section id="register-page" className="register">
-        <form id="register-form" action="" method="">
+        <form onSubmit={handleSubmit(submitForm)} id="register-form" action="" method="">
                 <legend>Register Form</legend>
                 <p className="field">
                     <label htmlFor="email">Email</label>
                     <span className="input">
-                        <input type="text" name="email" id="email" placeholder="example@gmail.com" onChange={(event) => setRegisterEmail(event.target.value)}/>
+                        <input  type="text" name="email" id="email" placeholder="example@gmail.com" {...register('email')} />
                     </span>
+                    <p>{errors.email?.message}</p>
+
                 </p>
                 <p className="field" >
                     <label htmlFor="password">Password</label>
                     <span className="input">
-                        <input type="password" name="password" id="password" placeholder="123456"  onChange={(event) => setRegisterPassword(event.target.value)} />
+                        <input  type="password" name="password" id="password" placeholder="123456" {...register('password')}/>
                     </span>
+                    <p>{errors.password?.message}</p>
+
+                    
                 </p>
                
-                <input className="button submit" type="submit" value="Register" onClick={registerHandler} />
+                <input className="button submit" type="submit" value="Register"  />
         </form>
-    </section>
-    );
+      </section>
+     );
+ 
 }
 export default Register;

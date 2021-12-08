@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard/Dashboard.js';
 import Register from './components/Register/Register.js';
 import Login from './components/Login/Login.js';
 import Create from './components/Create/Create.js';
+  
 import './App.css';
 
 
@@ -14,8 +15,9 @@ function App() {
     <div id="container">
      <Header/>
      <main id="site-content">
+   
   <Routes>
-   <Route path="/dashboard" element={<Dashboard />}/>
+   <Route path="/" element={<Dashboard />}/>
    <Route path="/Login" element={<Login />}/>
    <Route path="/Register" element={<Register />}/>
    <Route path="/Create" element={<Create />}/>

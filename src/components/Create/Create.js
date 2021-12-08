@@ -19,7 +19,7 @@ const Create = () => {
     const createPost = async (e) =>{
      e.preventDefault();
       await addDoc(cardsCollectionRef,{name: newName, description:newDescription,imageurl:newImage,category:newCategory,breed:newBreed})
-      navigate('/dashboard');
+      navigate('/');
     }
 
 
