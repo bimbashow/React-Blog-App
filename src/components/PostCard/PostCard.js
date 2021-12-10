@@ -31,7 +31,6 @@ const PostCard= () => {
         <h3 className="card-name">Name: {card.name}</h3> 
         <p className="card-category">Category: {card.category}</p>
         <p className="card-breed">Breed: {card.breed}</p>
-        <p className="card-age">Age: {card.age}</p>
         <p className="card-description">{card.description}</p>
         <div className="post-info"> 
             <a href="#"><button className="button"><i className="fas fa-heart"></i>Favourite</button></a>

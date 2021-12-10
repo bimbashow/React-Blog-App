@@ -21,7 +21,7 @@
     width: 300px;
 }
 
-.input #category,#name,#description,#image,#breed,#age{
+.input #category,#name,#description,#imageurl,#breed,#age{
     padding: 15px 40px;
     border-radius: 30px;
 }

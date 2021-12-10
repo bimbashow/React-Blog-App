@@ -11,6 +11,7 @@ import { useNavigate } from "react-router";
 
 const Register = () => {
 
+
     const navigate = useNavigate();
 
     const {register, handleSubmit, formState: { errors }} = useForm({
@@ -24,7 +25,7 @@ const Register = () => {
             navigate('/')
           })
           .catch((error) => {
-            console.log(error.message);
+            alert('This email is already taken.Please choose another')
           });
 
     };
@@ -36,7 +37,7 @@ const Register = () => {
                 <p className="field">
                     <label htmlFor="email">Email</label>
                     <span className="input">
-                        <input  type="text" name="email" id="email" placeholder="example@gmail.com" {...register('email')} />
+                        <input  type="text" name="email" id="email" placeholder="example@gmail.com" {...register('email')}   />
                     </span>
                     <p>{errors.email?.message}</p>
 
@@ -48,10 +49,9 @@ const Register = () => {
                     </span>
                     <p>{errors.password?.message}</p>
 
-                    
                 </p>
                
-                <input className="button submit" type="submit" value="Register"  />
+                <input className="button submit" type="submit" value="Register"    />
         </form>
       </section>
      );

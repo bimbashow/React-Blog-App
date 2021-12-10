@@ -23,8 +23,9 @@ function App() {
    <Route path="/Create" element={<Create />}/>
   </Routes>
      </main>
+    
     </div>
-    <footer id="site-footer"></footer>
+    
     </>
   );
 }
