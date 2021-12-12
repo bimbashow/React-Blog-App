@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "../../Validations/createPostValidation.js";
 
 const Create = () => {
     
@@ -14,45 +15,30 @@ const Create = () => {
 
 
 
-    const schema = yup.object().shape({
-        name: yup.string().min(2).max(15).required(),
-        breed: yup.string().required(),
-        category: yup.string().required(),
-        imageurl: yup.string().required(),
-        description: yup.string().required(),
-    });
 
     const {register, handleSubmit, formState: { errors }} = useForm({
         resolver: yupResolver(schema),
     });
 
-    const submitForm = async (data) => {
+    const onCreateSubmitForm = async (data) => {
+     
      await addDoc(cardsCollectionRef,(data));
-     console.log(data);
     navigate('/');
 
     };
 
-  
-    
-    
-
-    // const createPost = async (e) =>{
-    //  e.preventDefault();
-    //   await addDoc(cardsCollectionRef,{name: newName, description:newDescription,imageurl:newImage,category:newCategory,breed:newBreed})
-    //   navigate('/');
-    // }
 
 
     return(
         <section id="create-page" className="create">
-        <form onSubmit={handleSubmit(submitForm)} id="create-form"  method="POST">
+        <form onSubmit={handleSubmit(onCreateSubmitForm)} id="create-form"  method="POST">
                 <legend>Add Blog</legend>
                 <p className="field">
                     <label htmlFor="name">Name</label>
                     <span className="input">
                         <input type="text" name="name" id="name" placeholder="Navcho,Myrcho..." {...register('name') } />
                     </span>
+                
                 </p>
                 <p>{errors.name?.message}</p>
 

@@ -5,14 +5,10 @@ import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import { getAuth } from "@firebase/auth";
-
+import { schema } from "../../Validations/loginUserValidation.js";
 const Login = () => {
     const navigate = useNavigate();
 
-     const schema = yup.object().shape({
-        email: yup.string().email().required(),
-        password: yup.string().min(6).max(10).required(),
-    });
 
     const {register, handleSubmit, formState: { errors }} = useForm({
         resolver: yupResolver(schema),
@@ -25,7 +21,7 @@ const Login = () => {
             navigate('/')
           })
           .catch((error) => {
-            console.log(error.message);
+            console.log(error.message + "username is wrong");
           });
 
     };
@@ -39,17 +35,16 @@ const Login = () => {
                     <span className="input">
                         <input type="text" name="email" id="email" placeholder="example@gmail.com" {...register('email') }/>
                     </span>
-                    <p>{errors.email?.message}</p>
-
                 </p>
+                <p>{errors.email?.message}</p>
+
                 <p className="field">
                     <label htmlFor="password">Password</label>
                     <span className="input">
                         <input type="password" name="password" id="password" placeholder="123456"  {...register('password') }/>
                     </span>
-                    <p>{errors.password?.message}</p>
-
                 </p>
+                <p>{errors.password?.message}</p>
                 <input className="button submit" type="submit" value="Login"  />
         </form>
     </section>

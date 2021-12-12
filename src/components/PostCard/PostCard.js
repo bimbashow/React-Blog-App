@@ -1,49 +1,43 @@
-import { useState,useEffect } from "react";
-import {db} from "../../config/firebaseConfig.js"
-import {collection,getDocs} from "firebase/firestore";
+import { useState, useEffect } from "react";
+import { db } from "../../config/firebaseConfig.js"
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import "./PostCard.css"
-const PostCard= () => {
- 
-    
-    const [cards,setCards] = useState([]);
-    const cardsCollectionRef = collection(db,"cats")
+import PostCardListItem from "../PostCardListItem/PostCardListItem.js";
+const PostCard = () => {
 
 
-    useEffect(() =>{
-    const getCards = async() =>{
-       const data = await getDocs(cardsCollectionRef);
-       setCards(data.docs.map((doc) =>({...doc.data(), id:doc.id})))
-    }
-    getCards()
-    },[])
+    const [cards, setCards] = useState([]);
+    const cardsCollectionRef = collection(db, "cats")
 
-    
-   
- 
-    return (
-        <li className="otherPosts">
-         {cards.map((card) => {
 
-       return (
-           <div className="postcard-info">
-        <p className="img"><img src={card.imageurl}/></p>
-        <div className="card-info-details">
-        <h3 className="card-name">Name: {card.name}</h3> 
-        <p className="card-category">Category: {card.category}</p>
-        <p className="card-breed">Breed: {card.breed}</p>
-        <p className="card-description">{card.description}</p>
-        <div className="post-info"> 
-            <a href="#"><button className="button"><i className="fas fa-heart"></i>Favourite</button></a>
-            <a href="#"><button className="button">Details</button></a>
-            <i className="fas fa-heart"></i> <span> 2</span>
-        </div>
-        </div>
-    </div>
-       );
-         })}
-    </li>
- 
-    )
+    useEffect(() => {
+        const getCards = async () => {
+            const data = await getDocs(cardsCollectionRef);
+            setCards(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
         }
+        getCards()
+    }, [])
+
+   const onDeleteCard = (id) =>{
+    console.log(doc(cardsCollectionRef,id));
+     deleteDoc(doc(cardsCollectionRef,id)).then(()=>{
+         setCards((cards)=> cards.filter((c)=>c.id!==id))
+     })
+       console.log("id deleted");
+   }
+
+
+    return (
+        <li className="otherPosts" >
+            {cards.map((card) => {
+
+                return (
+                  <PostCardListItem card={card} key={card.id} onDelete={onDeleteCard}/>
+                );
+            })}
+        </li>
+
+    )
+}
 
 export default PostCard;

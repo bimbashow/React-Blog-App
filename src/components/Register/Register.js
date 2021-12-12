@@ -17,9 +17,9 @@ const Register = () => {
     const {register, handleSubmit, formState: { errors }} = useForm({
         resolver: yupResolver(schema),
     });
-    const submitForm = (data) => {
+    const onRegisterSubmitForm = (data) => {
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, data.email, data.password )
+        createUserWithEmailAndPassword(auth, data.email, data.password,data.id)
           .then((userCredential) => {
             const user = userCredential.user;
             navigate('/')
@@ -32,7 +32,7 @@ const Register = () => {
     
        return(
         <section id="register-page" className="register">
-        <form onSubmit={handleSubmit(submitForm)} id="register-form" action="" method="">
+        <form onSubmit={handleSubmit(onRegisterSubmitForm)} id="register-form" action="" method="">
                 <legend>Register Form</legend>
                 <p className="field">
                     <label htmlFor="email">Email</label>

@@ -1,7 +1,7 @@
 
 img{
     height: 240px;
-    width: 319px;
+    width: 320px;
     justify-content: center;
     border-radius: 15px 15px 0 0;
     background-size: cover;
@@ -18,11 +18,11 @@ img{
 
 }
 .postcard-info{
-    background-color: #302e2e;
+    background-color: lightblue;
     width: 320px;
     height: 460px;
     margin: 30px 40px;
-    color: white;
+    color: black;
     border-radius: 15px;
     position: relative;
   transition: 0.4s ease-out;
@@ -31,11 +31,14 @@ img{
 .postcard-info:hover{
     transform: translateY(20px);
 }
+
 .card-name{
+    
     margin-top: -15px;
     margin-left: 10px;
 }.card-category{
     text-align: center;
+    
 }.card-breed{
     text-align: center;
 }.card-age{
@@ -44,3 +47,13 @@ img{
     text-align: center;
 }
 
+.card-button{
+    background-color: #000000;
+    color: white;
+    padding: 5px 20px;
+    font-size: 15px;
+}
+.post-info{
+    display: flex;
+    justify-content: space-evenly;
+}

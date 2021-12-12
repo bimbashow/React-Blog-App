@@ -21,6 +21,7 @@ const logoutHandler = async (e) => {
 }
 
 onAuthStateChanged(auth, (currentUser) =>{
+  
 setUser(currentUser);
 });
 
