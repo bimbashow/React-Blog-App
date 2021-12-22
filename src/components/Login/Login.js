@@ -18,7 +18,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, data.email, data.password )
           .then((userCredential) => {
             const user = userCredential.user;
-            navigate('/')
+            navigate('/dashboard')
           })
           .catch((error) => {
             console.log(error.message + "username is wrong");
@@ -36,7 +36,7 @@ const Login = () => {
                         <input type="text" name="email" id="email" placeholder="example@gmail.com" {...register('email') }/>
                     </span>
                 </p>
-                <p>{errors.email?.message}</p>
+                <p className="error">{errors.email?.message}</p>
 
                 <p className="field">
                     <label htmlFor="password">Password</label>
@@ -44,7 +44,7 @@ const Login = () => {
                         <input type="password" name="password" id="password" placeholder="123456"  {...register('password') }/>
                     </span>
                 </p>
-                <p>{errors.password?.message}</p>
+                <p className="error">{errors.password?.message}</p>
                 <input className="button submit" type="submit" value="Login"  />
         </form>
     </section>

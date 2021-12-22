@@ -34,7 +34,9 @@ setUser(currentUser);
  </div>;
 
  const userNav = 
- <div id="user">            
+ 
+ <div id="user">   
+ <Link to="/dashboard" className="dashboard-btnn">Dashboard</Link>
  <span>Welcome, {user?.email}</span>
  <Link className="button" to="/my-posts">My Posts</Link>
  <Link className="button" to="/favourites">Favourites</Link>
@@ -48,7 +50,6 @@ setUser(currentUser);
       
         <nav className="navbar">
             <section className="navbar-dashboard">
-                <Link to="/" className="dashboard-btnn">Dashboard</Link>
 
                  
              {user !== null ? userNav : guestNav}

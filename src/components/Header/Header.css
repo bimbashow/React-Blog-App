@@ -5,6 +5,8 @@
     justify-content: space-between;
     color: white;
     align-items: center;
+    
+    
 }
 .navbar-dashboard .button {
     color: white;
@@ -16,15 +18,10 @@
 
 .dashboard-btnn{
     color: white;
-
+    padding-right: 890px;
     text-decoration: none;
     font-size: 28px;
 }
-
-/* .button{
-    transition: transform .2s;
-  }
-.button:hover{
-    transform: scale(1.5);
-  }
- */
+#guest{
+    padding-left: 1580px
+}

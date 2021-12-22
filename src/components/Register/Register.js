@@ -22,7 +22,8 @@ const Register = () => {
         createUserWithEmailAndPassword(auth, data.email, data.password,data.id)
           .then((userCredential) => {
             const user = userCredential.user;
-            navigate('/')
+            console.log(user);
+            navigate('/dashboard')
           })
           .catch((error) => {
             alert('This email is already taken.Please choose another')
@@ -39,7 +40,7 @@ const Register = () => {
                     <span className="input">
                         <input  type="text" name="email" id="email" placeholder="example@gmail.com" {...register('email')}   />
                     </span>
-                    <p>{errors.email?.message}</p>
+                    <p className="error">{errors.email?.message}</p>
 
                 </p>
                 <p className="field" >
@@ -47,7 +48,7 @@ const Register = () => {
                     <span className="input">
                         <input  type="password" name="password" id="password" placeholder="123456" {...register('password')}/>
                     </span>
-                    <p>{errors.password?.message}</p>
+                    <p className="error">{errors.password?.message}</p>
 
                 </p>
                

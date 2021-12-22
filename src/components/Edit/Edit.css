@@ -1,4 +1,4 @@
-.create{
+.edit{
     color: white;
     background-color: #000000b8;
     display: flex;
@@ -13,7 +13,7 @@
      border-radius: 20px;
  }
 
- #create-form{
+ #edit-form{
     display: flex;
     margin:auto;
     flex-direction: column;
@@ -34,7 +34,4 @@
 }
 #label{
     vertical-align: middle;
-}
-.error{
-    color: red;
 }

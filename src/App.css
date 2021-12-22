@@ -7,17 +7,6 @@ html,body{
   margin: 0;
   padding: 0;
 }
-body{
-   margin: 0;
-   background-image: url("https://images.unsplash.com/photo-1578509324231-296b287ea749?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-   background-attachment: fixed;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
-   overflow-x: auto;
-
-}
-
 
 #site-footer{
   width: 100%;

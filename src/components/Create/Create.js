@@ -21,13 +21,10 @@ const Create = () => {
     });
 
     const onCreateSubmitForm = async (data) => {
-     
-     await addDoc(cardsCollectionRef,(data));
-    navigate('/');
+     await addDoc(cardsCollectionRef,(data)  );
+    navigate('/dashboard');
 
     };
-
-
 
     return(
         <section id="create-page" className="create">
@@ -40,7 +37,7 @@ const Create = () => {
                     </span>
                 
                 </p>
-                <p>{errors.name?.message}</p>
+                <p className="error">{errors.name?.message}</p>
 
                 <p className="field">
                     <label htmlFor="breed">Breed</label>
@@ -48,28 +45,28 @@ const Create = () => {
                         <input type="text" name="breed" id="breed" placeholder="siamese cat,persian..." {...register('breed') } />
                     </span>
                 </p> 
-                <p>{errors.breed?.message}</p>
+                <p className="error">{errors.breed?.message}</p>
                 <p className="field">
                     <label htmlFor="category" className="create-category-label">Category</label>
                     <span className="input">
                         <input type="text" name="category" id="category" placeholder="cute,funny..." {...register('category') } />
                     </span>
                 </p> 
-                <p>{errors.category?.message}</p>
+                <p className="error">{errors.category?.message}</p>
                 <p className="field">
                     <label htmlFor="image">Image    </label>
                     <span className="input">
                         <input type="text" name="image" id="imageurl" placeholder="adress link" {...register('imageurl') }  />
                     </span>
                 </p>
-                <p>{errors.image?.message}</p>
+                <p className="error">{errors.image?.message}</p>
                 <p className="field">
-                    <label htmlFor="description" className="    ">Description</label>
+                    <label htmlFor="description" className="description">Description</label>
                     <span className="input">
                         <input type="text" name="description" id="description" placeholder="say few words for your photo" {...register('description') }/>
                     </span>
                 </p>
-                <p>{errors.description?.message}</p>
+                <p className="error">{errors.description?.message}</p>
                 <input className="button submit"  type="submit" value="Add Post" />
         </form>
     </section>
