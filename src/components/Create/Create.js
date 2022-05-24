@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Create.css";
-import { db } from "../../config/firebaseConfig.js";
+import { auth, db } from "../../config/firebaseConfig.js";
 import { addDoc,collection } from "@firebase/firestore";
 import { useNavigate } from "react-router";
 import * as yup from 'yup';
@@ -13,7 +13,8 @@ const Create = () => {
     const navigate  = useNavigate();
     const cardsCollectionRef = collection(db,"cats")
 
-
+    const user = auth.currentUser.displayName;
+    console.log(user);
 
 
     const {register, handleSubmit, formState: { errors }} = useForm({
@@ -21,7 +22,7 @@ const Create = () => {
     });
 
     const onCreateSubmitForm = async (data) => {
-     await addDoc(cardsCollectionRef,(data)  );
+     await addDoc(cardsCollectionRef,(data));
     navigate('/dashboard');
 
     };

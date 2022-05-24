@@ -8,16 +8,19 @@ import Create from './components/Create/Create.js';
 import './App.css';
 import Edit from './components/Edit/Edit.js';
 import Details from './components/Details/Details.js';
+import { useState } from 'react/cjs/react.development';
 
 
 
 function App() {
+const [user,setUser] = useState({});
+console.log(user);
+
   return (
     <>
     <div id="container">
      <Header/>
      <main id="site-content">
-   
   <Routes>
    <Route path="/dashboard" element={<Dashboard />}/>
    <Route path="/Login" element={<Login />}/>

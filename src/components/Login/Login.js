@@ -41,7 +41,7 @@ const Login = () => {
                 <p className="field">
                     <label htmlFor="password">Password</label>
                     <span className="input">
-                        <input type="password" name="password" id="password" placeholder="123456"  {...register('password') }/>
+                        <input type="password" name="password" id="password" placeholder="******"  {...register('password') }/>
                     </span>
                 </p>
                 <p className="error">{errors.password?.message}</p>
